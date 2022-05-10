@@ -45,8 +45,8 @@ const Profile = (props) => {
     <Fragment>
       <Head>
         <title>profile</title>
-        <mata charset="uft-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="uft-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
       </Head>
       <UserNav userfirstName={props.userInfo.firstName} />
     </Fragment>

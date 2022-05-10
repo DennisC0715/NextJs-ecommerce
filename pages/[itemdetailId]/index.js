@@ -11,8 +11,8 @@ const ItemDetail = (props) => {
     <Fragment>
       <Head>
         <title>detial</title>
-        <mata charset="uft-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="uft-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
       </Head>
       <BrakeDetail
         image={props.detailData.image}
@@ -68,7 +68,6 @@ export async function getStaticProps(context) {
         model: "1500",
         engine: "ALL ENGINE",
         price: "500",
-        isFavorite: false,
         detailImage: fullset,
         image: oesfull,
         description:

@@ -17,8 +17,8 @@ const Orderpage = () => {
     <Fragment>
       <Head>
         <title>orderHistory Page</title>
-        <mata charset="uft-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="uft-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
       </Head>
       <UserNav></UserNav>
       <h1>Order History is Empty</h1>

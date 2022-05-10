@@ -65,8 +65,8 @@ const Brakes = (props) => {
     <Fragment>
       <Head>
         <title>Shop</title>
-        <mata charset="uft-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="uft-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
       </Head>
       <BrakeItems itemData={props.brakeItems} />
       {showModal && <WishlistModal onHide={hideModalHandler} />}
