@@ -23,8 +23,12 @@ a {
   width: auto;
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 899px) {
   html,
   body {
+    background-color: #b22727;
+    background-image: url("../component/img/Areion_Decal_Inverted_1.png");
+    background-size: 80% 12%;
+    background-position: center;
   }
 }
