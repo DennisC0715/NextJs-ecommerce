@@ -1,0 +1,36 @@
+.container {
+  width: auto;
+  height: auto;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-areas: "CartItem Checkout";
+  gap: 30px;
+  padding: 10px;
+}
+
+.float {
+  float: right;
+}
+
+.text1 {
+  margin-top: 10px;
+  margin-left: 48px;
+  color: rgb(255, 254, 254);
+  font-size: 2rem;
+  
+}
+
+.text2 {
+  margin-top: 10px;
+  margin-left: 48px;
+  color: rgb(255, 254, 254);
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  
+}
+
+.nostyle {
+  text-decoration: none;
+}

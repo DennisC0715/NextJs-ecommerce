@@ -1,0 +1,70 @@
+.card {
+  border-color: #918d94;
+  border-style: solid;
+  margin-right: 20px;
+  max-width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h6 {
+  margin: 3px 0;
+  font-size: 1rem;
+}
+
+.card h3 {
+  display: inline;
+  width: 70%;
+  margin: 3px 0;
+  font-size: 2rem;
+}
+.card h4 {
+  margin: 10px 0;
+  height: 60px;
+}
+
+.description {
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+.card h5 {
+  color: #ff4949;
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.priceAndQuantity {
+  width: 100%;
+  display: flex;
+  margin: 0 0;
+  height: 40px;
+}
+
+.card button {
+  color: rgb(26, 19, 19);
+  border: 2px solid rgb(245, 112, 2);
+  border-radius: 20px;
+  padding: 5px 36px;
+  display: inline-block;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #ff5f00;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.card button:hover {
+  box-shadow: inset 0 0 0 50px #ff5f00;
+}

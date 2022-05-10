@@ -1,0 +1,23 @@
+.container {
+  margin-top: 20px;
+  margin-left: 50px;
+}
+.container h1 {
+  margin-left: 35px;
+  color: rgb(255, 251, 251);
+}
+
+.container h4 {
+  margin-left: 35px;
+  color: rgb(247, 245, 245);
+}
+
+.container h3 {
+  margin-left: 35px;
+  color: rgb(10, 10, 10);
+}
+
+.container p {
+  margin-left: 35px;
+  color: rgb(8, 8, 8);
+}
