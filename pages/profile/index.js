@@ -43,11 +43,11 @@ const Profile = (props) => {
 
   return (
     <Fragment>
-      {/* <Head>
+      <Head>
         <title>profile</title>
         <mata charset="uft-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head> */}
+      </Head>
       <UserNav userfirstName={props.userInfo.firstName} />
     </Fragment>
   );

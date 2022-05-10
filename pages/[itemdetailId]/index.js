@@ -9,11 +9,11 @@ import Head from "next/head";
 const ItemDetail = (props) => {
   return (
     <Fragment>
-      {/* <Head>
+      <Head>
         <title>detial</title>
         <mata charset="uft-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head> */}
+      </Head>
       <BrakeDetail
         image={props.detailData.image}
         detailImage={props.detailData.detailImage}
