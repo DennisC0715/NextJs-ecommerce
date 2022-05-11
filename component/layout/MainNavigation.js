@@ -54,10 +54,6 @@ function MainNavigation() {
     navbarShowed ? classes.active : ""
   }`;
 
-  // const activeClass = navbarShowed
-  //   ? classes.navbarLinks.active
-  //   : classes.navbarLinks;
-
   const links = userIsLoggedIn ? "/profile" : "/login";
 
   return (
@@ -70,20 +66,19 @@ function MainNavigation() {
           width="120%"
           height="30%"
         />
+        <HeaderCartButton />
       </div>
 
-      {/* <div> */}
-      {/* {logInOrOut}
-          <span>
-            <HeaderCartButton />
-          </span> */}
-
+      <div>
+        {/* {logInOrOut} */}
+        <span></span>
+      </div>
       <a href className={classes.toggle} onClick={toggleNavbar}>
         <span className={classes.bar}></span>
         <span className={classes.bar}></span>
         <span className={classes.bar}></span>
       </a>
-      {/* </div> */}
+
       <div className={showNavbar}>
         <ul>
           <li>
