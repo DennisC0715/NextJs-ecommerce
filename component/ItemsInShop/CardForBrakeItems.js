@@ -26,7 +26,7 @@ const CardForBrakeItems = (props) => {
   return (
     <div className={classes.card}>
       <Link href={"/" + props.id} passHref>
-        <Image src={props.image} alt={props.set} width={300} height={300} />
+        <Image src={props.image} alt={props.set} />
       </Link>
       <h6>This {props.set} Brake Kit is for: </h6>
       <Link href={"/" + props.id} passHref>

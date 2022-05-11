@@ -51,6 +51,45 @@ const Dummy_Brakes = [
     description:
       "It includes included 2 REAR Brake Roters and 4 REAR Brake Pads.",
   },
+  {
+    id: "b4",
+    set: "Full Set",
+    year: "2022",
+    made: "FORD",
+    model: "F-150",
+    engine: "ALL ENGINE",
+    price: "500",
+    detailImage: fullset,
+    image: oesfull,
+    description:
+      "It includes included 4 (2 FRONT, 2 REAR) Brake Roters and 8 (4 FRONT, 4 REAR) Brake Pads.",
+  },
+  {
+    id: "b5",
+    set: "Front Set",
+    year: "2022",
+    made: "FORD",
+    model: "F-150",
+    engine: "ALL ENGINE",
+    price: "320",
+    image: oesFront,
+    detailImage: frontset,
+    description:
+      "It includes included 2 FRONT Brake Roters and 4 FRONT Brake Pads.",
+  },
+  {
+    id: "b6",
+    set: "Rear Set",
+    year: "2022",
+    made: "FORD",
+    model: "F-150",
+    engine: "ALL ENGINE",
+    price: "200",
+    image: oesRear,
+    detailImage: rearset,
+    description:
+      "It includes included 2 REAR Brake Roters and 4 REAR Brake Pads.",
+  },
 ];
 
 const Brakes = (props) => {

@@ -10,9 +10,11 @@ import { logoutHandler } from "../ReduxStore/slices/authSlice";
 import { clearUserInfo } from "../ReduxStore/slices/userSlice";
 import { clearCart } from "../ReduxStore/slices/cartSlice";
 import { clearWishList } from "../ReduxStore/slices/wishListSlice";
+import { useState } from "react";
 import { NavLink } from "./NavLink";
 
 function MainNavigation() {
+  const [navbarShowed, setNavbarShowed] = useState(false);
   const userIsLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
 
@@ -44,39 +46,61 @@ function MainNavigation() {
     </button>
   );
 
-  // const classsName = clicked ? `${classes.linksolid}` : "";
+  const toggleNavbar = () => {
+    setNavbarShowed((navbarShowed) => !navbarShowed);
+  };
+
+  const showNavbar = `${classes.navbarLinks} ${
+    navbarShowed ? classes.active : ""
+  }`;
+
+  // const activeClass = navbarShowed
+  //   ? classes.navbarLinks.active
+  //   : classes.navbarLinks;
+
+  const links = userIsLoggedIn ? "/profile" : "/login";
 
   return (
-    <header className={classes.header}>
+    <nav className={classes.navbar}>
       <div className={classes.logo}>
         <Image
           onClick={homePage}
           src={writelogo}
           alt="areionBrakes inc logo"
-          width={230}
-          height={60}
+          width="120%"
+          height="30%"
         />
       </div>
-      <nav>
+
+      {/* <div> */}
+      {/* {logInOrOut}
+          <span>
+            <HeaderCartButton />
+          </span> */}
+
+      <a href className={classes.toggle} onClick={toggleNavbar}>
+        <span className={classes.bar}></span>
+        <span className={classes.bar}></span>
+        <span className={classes.bar}></span>
+      </a>
+      {/* </div> */}
+      <div className={showNavbar}>
         <ul>
           <li>
             <Link href="/">Home</Link>
           </li>
-
           <li>
             <Link href="/shop">Shop</Link>
           </li>
           <li>
             <Link href="/wishList">WishLists</Link>
           </li>
-          <li>{userIsLoggedIn && <Link href="/profile">Account</Link>}</li>
-          <li>{logInOrOut}</li>
-          <span>
-            <HeaderCartButton />
-          </span>
+          <li>
+            <Link href={links}>Account</Link>
+          </li>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 }
 
