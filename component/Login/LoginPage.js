@@ -18,7 +18,6 @@ const LoginPage = () => {
 
   return (
     <div className={classes.container}>
-      <button onClick={toggleForms}>showSignup</button>
       <div>
         {forms}
         {/* {!showSignupForm && <LoginForm showSignup={toggleForms} />}
