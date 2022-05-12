@@ -8,7 +8,7 @@ body {
   background-image: url("../component/HomepageImage/areion\ wallpaper.jpg");
   height: 100%;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
   opacity: 1;
 }
@@ -30,5 +30,6 @@ a {
     background-image: url("../component/img/Areion_Decal_Inverted_1.png");
     background-size: 80% 9%;
     background-position: center;
+    background-repeat: no-repeat;
   }
 }

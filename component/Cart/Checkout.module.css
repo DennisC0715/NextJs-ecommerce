@@ -1,40 +1,89 @@
-.container {
-  background-color: #eeeeee;
-  max-width: 400px;
-  margin-top: 1rem;
-  padding: 1rem;
-  position: sticky;
+@media (min-width: 900px) {
+  .container {
+    background-color: #eeeeee;
+    max-width: 80%;
+    margin: 1rem auto;
+    padding: 1rem;
+    position: sticky;
+  }
+
+  .split {
+    float: right;
+    margin-right: 10px;
+  }
+
+  .marginleft {
+    margin-left: 10px;
+  }
+
+  .button {
+    color: rgb(26, 19, 19);
+    border: 2px solid rgb(245, 112, 2);
+    border-radius: 20px;
+    padding: 18px 36px;
+    display: inline-block;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #ff5f00;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 38px;
+  }
+
+  .button:hover {
+    box-shadow: inset 0 0 0 50px #ff5f00;
+  }
 }
 
-.split {
-  float: right;
-  margin-right: 10px;
-}
+@media (max-width: 899px) {
+  .container {
+    background-color: #eeeeee;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    position: flex;
+  }
 
-.marginleft {
-  margin-left: 10px;
-}
+  .container p {
+    font-size: 180%;
+    font-weight: bold;
+    font-style: italic;
+  }
 
-.button {
-  color: rgb(26, 19, 19);
-  border: 2px solid rgb(245, 112, 2);
-  border-radius: 20px;
-  padding: 18px 36px;
-  display: inline-block;
-  font-family: "Lucida Console", Monaco, monospace;
-  font-size: 20px;
-  text-align: center;
-  letter-spacing: 1px;
-  cursor: pointer;
-  box-shadow: inset 0 0 0 0 #ff5f00;
-  -webkit-transition: ease-out 0.4s;
-  -moz-transition: ease-out 0.4s;
-  transition: ease-out 0.4s;
-  width: 80%;
-  margin-top: 20px;
-  margin-left: 38px;
-}
+  .container h3 {
+    margin: 10px 0;
+  }
 
-.button:hover {
-  box-shadow: inset 0 0 0 50px #ff5f00;
+  .split {
+    float: right;
+  }
+
+  .button {
+    color: rgb(26, 19, 19);
+    border: 2px solid rgb(245, 112, 2);
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    display: inline-block;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #ff5f00;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    width: 45%;
+    margin: 10px 5px;
+  }
+
+  .button:hover {
+    box-shadow: inset 0 0 0 50px #ff5f00;
+  }
 }

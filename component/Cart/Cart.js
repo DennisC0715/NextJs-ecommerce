@@ -60,25 +60,21 @@ const Cart = () => {
       TOTAL {cartItemNumber} {itemText}
     </p>
   ) : (
-    <p>
+    <Link href="/shop" className={classes.nostyle}>
       Once you add something to your bag - it will appear here. Ready to get
-      started? Click
-      <Link href="/shop" className={classes.nostyle}>
-        {` here `}
-      </Link>
-      to start shopping!
-    </p>
+      started? Click here to start shopping!
+    </Link>
   );
 
   return (
-    <div>
-      <h1 className={classes.text1}>{bagText}</h1>
-      <h4 className={classes.text2}>{text}</h4>
-      <div className={classes.container}>
+    <div className={classes.container}>
+      <div className={classes.text}>
+        <h2>{bagText}</h2>
+        <h4>{text}</h4>
+      </div>
+      <div>
         <span>{itemsInCart}</span>
-        <span className={classes.float}>
-          {showSummary && <Checkout ClearCart={clearCartHandler} />}
-        </span>
+        <span>{showSummary && <Checkout ClearCart={clearCartHandler} />}</span>
       </div>
     </div>
   );

@@ -8,23 +8,31 @@ const CartItem = (props) => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.item}>
-        <Image src={props.image} alt={props.set} width={150} height={150} />
-        <div className={classes.text}>
-          <h3>
-            {props.year} {props.made} {props.model} {props.set} BRAKE KIT.
-          </h3>
-          <h6>{props.description}</h6>
-          <div className={classes.quantity}>
-            x <span>{props.itemQuantity}</span>
-          </div>
-        </div>
-        <div className={classes.price}>${OneItemTotalPrice}</div>
-        <div className={classes.details}>{`($${props.price}/item)`}</div>
-        <div className={classes.actions}>
-          <button onClick={props.onRemoveQuantity}>-</button>
-          <button onClick={props.onAdd}> +</button>
-          <button onClick={props.onRemoveOneItem}>REMOVE</button>
+      <div>
+        <Image src={props.image} alt={props.set} width={100} height={100} />
+      </div>
+      <div className={classes.description}>
+        <p>
+          {props.year} {props.made} {props.model} {props.set} BRAKE KIT.
+        </p>
+        <p>{props.description}</p>
+        <p>
+          <button className={classes.button} onClick={props.onRemoveQuantity}>
+            -
+          </button>
+          <button className={classes.button} onClick={props.onAdd}>
+            +
+          </button>
+        </p>
+      </div>
+      <div className={classes.price}>
+        <div>
+          <h3> ${OneItemTotalPrice}</h3>
+          <p>{`($${props.price}/item)`}</p>
+          <p>Quantity : x {props.itemQuantity}</p>
+          <button className={classes.button} onClick={props.onRemoveOneItem}>
+            REMOVE
+          </button>
         </div>
       </div>
     </div>

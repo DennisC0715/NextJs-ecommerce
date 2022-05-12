@@ -1,3 +1,121 @@
+@media (min-width: 900px) {
+  .container {
+    height: auto;
+    display: flex;
+    width: 80%;
+    margin-bottom: 8px;
+    background-color: #eeeeee;
+    padding: 0.2rem;
+    display: flex;
+    margin: 8px auto;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    font-style: italic;
+    width: 50%;
+  }
+
+  .description p {
+    margin: 0 0 5px 5px;
+    font-size: 0.7rem;
+    display: flex;
+  }
+
+  .price {
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 0.7rem;
+    text-align: center;
+    font-style: italic;
+    margin: 0.2rem 0;
+    width: 25%;
+  }
+
+  .price p {
+    margin: 0 0;
+    margin-bottom: 5px;
+  }
+
+  .price h3 {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .button {
+    background-color: transparent;
+    border: 2px solid rgb(17, 14, 14);
+    margin-left: 0.5rem;
+    height: 20px;
+    color: rgb(10, 9, 9);
+  }
+
+  .button:hover,
+  .button:active {
+    background-color: #4b4b4b;
+    color: white;
+  }
+}
+
+@media (max-width: 899px) {
+  .container {
+    height: auto;
+    display: flex;
+    width: 100%;
+    margin-bottom: 8px;
+    background-color: #eeeeee;
+    padding: 0.2rem;
+    display: flex;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    font-style: italic;
+    width: 50%;
+  }
+
+  .description p {
+    margin: 0 0 5px 5px;
+    font-size: 0.7rem;
+    display: flex;
+  }
+
+  .price {
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 0.7rem;
+    text-align: center;
+    font-style: italic;
+    margin: 0.2rem 0;
+    width: 25%;
+  }
+
+  .price p {
+    margin: 0 0;
+    margin-bottom: 5px;
+  }
+
+  .price h3 {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .button {
+    background-color: transparent;
+    border: 2px solid rgb(17, 14, 14);
+    margin-left: 0.5rem;
+    height: 20px;
+    color: rgb(10, 9, 9);
+  }
+
+  .button:hover,
+  .button:active {
+    background-color: #4b4b4b;
+    color: white;
+  }
+}
+
+/* 
 .container {
   height: auto;
   display: flex;
@@ -82,4 +200,4 @@
 .actions button:active {
   background-color: #4b4b4b;
   color: white;
-}
+} */

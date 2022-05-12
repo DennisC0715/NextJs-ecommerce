@@ -7,7 +7,7 @@ const WishList = () => {
 
   const itemNumber = wishList.length;
   const hasItemInList = itemNumber > 0;
-  const itemText = hasItemInList > 1 ? "ITEM" : "ITEMS";
+  const itemText = hasItemInList > 1 ? "ITEMS" : "ITEM";
   const itemTextP = hasItemInList
     ? ""
     : "You haven't saved any items to your wishlist yet. Start shopping and add your favorite items to your wishlist.";
@@ -28,11 +28,13 @@ const WishList = () => {
 
   return (
     <div className={classes.container}>
-      <h1>MY WISHLIST</h1>
-      <h4>
-        {itemNumber} {itemText}
-      </h4>
-      <h4>{itemTextP}</h4>
+      <div className={classes.text}>
+        <h1>MY WISHLIST</h1>
+        <h4>
+          {itemNumber} {itemText}
+        </h4>
+        <h4>{itemTextP}</h4>
+      </div>
       {wishListItemInPage}
     </div>
   );

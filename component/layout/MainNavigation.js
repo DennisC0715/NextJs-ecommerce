@@ -50,6 +50,12 @@ function MainNavigation() {
     setNavbarShowed((navbarShowed) => !navbarShowed);
   };
 
+  const timerToggle = () => {
+    setTimeout(() => {
+      setNavbarShowed((navbarShowed) => !navbarShowed);
+    }, 500);
+  };
+
   const showNavbar = `${classes.navbarLinks} ${
     navbarShowed ? classes.active : ""
   }`;
@@ -66,13 +72,12 @@ function MainNavigation() {
           width="120%"
           height="30%"
         />
+      </div>
+      <div className={classes.cartbutton}>
         <HeaderCartButton />
       </div>
+      {/* <div>{logInOrOut}</div> */}
 
-      <div>
-        {/* {logInOrOut} */}
-        <span></span>
-      </div>
       <a href className={classes.toggle} onClick={toggleNavbar}>
         <span className={classes.bar}></span>
         <span className={classes.bar}></span>
@@ -80,7 +85,7 @@ function MainNavigation() {
       </a>
 
       <div className={showNavbar}>
-        <ul>
+        <ul onClick={timerToggle}>
           <li>
             <Link href="/">Home</Link>
           </li>

@@ -21,35 +21,34 @@ const WishItem = (props) => {
     dispatch(removeItemFromList(id));
   };
 
- 
-
   return (
     <div className={classes.container}>
-      <div className={classes.item}>
+      
+      <div>
         <Image
           src={image}
           alt={set}
-          width={150}
-          height={150}
+          width={100}
+          height={100}
           onClick={detailPageHandler}
         />
-        <div className={classes.text}>
-          <h3 onClick={detailPageHandler}>
-            {year} {made} {model} {set} BRAKE KIT.
-          </h3>
-          <div className={classes.price}>
-            <p>Price: ${price}</p>
-          </div>
+      </div>
+      <div className={classes.text}>
+        <p onClick={detailPageHandler}>
+          {year} {made} {model} {set} BRAKE KIT.
+        </p>
+        <div className={classes.price}>
+          <p>Price: ${price}</p>
         </div>
-        <div className={classes.image}>
-          <Image
-            src={addtoWishlist}
-            alt="FavImage"
-            width={100}
-            height={100}
-            onClick={removeItemHandler}
-          />
-        </div>
+      </div>
+      <div className={classes.image}>
+        <Image
+          src={addtoWishlist}
+          alt="FavImage"
+          width={50}
+          height={50}
+          onClick={removeItemHandler}
+        />
       </div>
     </div>
   );

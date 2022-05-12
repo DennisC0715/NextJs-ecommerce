@@ -32,6 +32,8 @@ const ItemDetail = (props) => {
     </Fragment>
   );
 };
+
+
 export async function getStaticPaths() {
   return {
     fallback: false,
