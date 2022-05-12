@@ -3,7 +3,7 @@ import classes from "./SignupForm.module.css";
 import useLogin from "./login-hook";
 import { Router, useRouter } from "next/router";
 
-const SignupForm = () => {
+const SignupForm = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [provice, setProvice] = useState("");
   const router = useRouter();
@@ -234,6 +234,7 @@ const SignupForm = () => {
 
   return (
     <section className={classes.auth}>
+      <h4 onClick={props.showSignin}>For Signing in click here</h4>
       <h1>Sign Up</h1>
       <form onSubmit={submitSignupHandler}>
         {/* //////////////////////////////////////Email//////////////////////////////////// */}

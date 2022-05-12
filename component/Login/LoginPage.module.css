@@ -1,16 +1,28 @@
-.container {
-  max-width: auto;
-  max-height: auto;
+/* @media (min-width: 900px) {
+  .container {
+    max-width: auto;
+    max-height: auto;
 
-  display: grid;
-  grid-template-columns: auto auto auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  .vertical-row {
+    margin: auto auto;
+    float: left;
+    height: 50%;
+    width: 3px;
+    background-color: rgb(129, 128, 131);
+  }
 }
 
-.vertical-row {
-  margin: auto auto;
-  float: left;
-  height: 50%;
-  width: 3px;
-  background-color: rgb(129, 128, 131);
-  
-}
+@media (max-width: 899px) {
+  .container {
+    width: 100%;
+    display: flex;
+  }
+
+  .vertical-row {
+    display: none;
+  }
+} */

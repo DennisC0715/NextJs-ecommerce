@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { loginHandler, logoutHandler } from "../ReduxStore/slices/authSlice";
 import { useRouter } from "next/router";
 
-const LoginForm = () => {
+const LoginForm = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const router = useRouter();
@@ -113,6 +113,7 @@ const LoginForm = () => {
 
   return (
     <section className={classes.auth}>
+      <h4 onClick={props.showSignup}>For Signing Up click here</h4>
       <h1>Login</h1>
       <form onSubmit={submitAuthHandler}>
         {/* ///////////////////////////Email///////////////////////////// */}
@@ -150,4 +151,3 @@ const LoginForm = () => {
   );
 };
 export default LoginForm;
-
