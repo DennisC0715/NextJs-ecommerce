@@ -20,7 +20,7 @@ function Layout(props) {
       {/* <MainNavigation /> */}
       <NavBar />
       <main className={classes.main}>{props.children}</main>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }

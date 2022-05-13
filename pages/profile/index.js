@@ -13,7 +13,6 @@ import { addUserInfo } from "../../component/ReduxStore/slices/userSlice";
 const Profile = (props) => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const webCart = useSelector((state) => state.cart.cartItems);
   const userCart = useSelector((state) => state.user.cart);
   const webWishList = useSelector((state) => state.wishlist.wishListItems);
@@ -21,7 +20,7 @@ const Profile = (props) => {
 
   useEffect(() => {
     const initialToken = localStorage.getItem("token");
-    if (!initialToken || !isLoggedIn) {
+    if (!initialToken) {
       router.push("/login");
       return;
     }
@@ -49,6 +48,9 @@ const Profile = (props) => {
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
       </Head>
       <UserNav userfirstName={props.userInfo.firstName} />
+      <h1>User profile</h1>
+      <h1>addresses</h1>
+      <h1>change password</h1>
     </Fragment>
   );
 };
