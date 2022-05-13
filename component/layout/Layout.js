@@ -1,11 +1,10 @@
 import MainNavigation from "./MainNavigation";
 import classes from "./Layout.module.css";
 import Footer from "./Footer";
+import NavBar from "./NavBar";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setIsLoggedIn } from "../ReduxStore/slices/authSlice";
-
-
 function Layout(props) {
   const dispatch = useDispatch();
 
@@ -18,7 +17,8 @@ function Layout(props) {
 
   return (
     <div>
-      <MainNavigation />
+      {/* <MainNavigation /> */}
+      <NavBar />
       <main className={classes.main}>{props.children}</main>
       <Footer></Footer>
     </div>

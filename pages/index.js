@@ -15,7 +15,7 @@ const Home = () => {
           textAlign: "center",
         }}
       >
-        Welcome to{" "}
+        Welcome to
       </h1>
     </div>
   );

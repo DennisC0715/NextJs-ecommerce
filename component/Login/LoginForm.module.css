@@ -1,7 +1,7 @@
 .auth {
-  margin: 13rem 7rem;
+  margin: 6rem auto;
   width: auto;
-  max-width: 30rem;
+  max-width:900px;
   border-radius: 10px;
   background-color: #ff6363;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);

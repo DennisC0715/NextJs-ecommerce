@@ -1,0 +1,125 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2;
+  color: #f32424;
+  font-size: 1rem;
+  height: 3rem;
+}
+
+.logo {
+  display: flex;
+  position: relative;
+  text-align: center;
+  height: 2.8rem;
+  width: 170px;
+  top: 0.1rem;
+}
+
+.logoimg {
+  width: 150px;
+}
+
+.cartbutton {
+  position: absolute;
+  top: 0.1em;
+  right: 0.1rem;
+}
+
+.navbarLinksul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  flex-direction: column;
+  z-index: 1;
+  top: 0;
+  background-color: #f2f2f2;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.navbarLinksli {
+  list-style: none;
+  text-align: center;
+}
+
+.navbarLinksli a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f32424;
+  display: block;
+  transition: 0.3s;
+}
+
+.navbarLinksul .closebtn {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 36px;
+  margin-right: 50px;
+}
+
+.navbarLinksul.active {
+  width: 35%;
+}
+
+.navbarLinks a:hover,
+.navbarLinks a:active,
+.navbarLinks a.active {
+  color: #fcb8d2;
+}
+
+.toggle {
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #f32424;
+  border-radius: 10px;
+}
+
+@media (max-width: 899px) {
+  .navbar {
+    height: 2rem;
+  }
+
+  .logo {
+    width: 122px;
+    height: 30px;
+    left: ;
+  }
+
+  .cartbutton {
+    position: absolute;
+    top: 0.2em;
+    right: 0.2rem;
+  }
+
+  .toggle {
+    top: 0.3rem;
+  }
+
+  .navbarLinksli a {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbarLinksul.active {
+    width: 100%;
+  }
+}
