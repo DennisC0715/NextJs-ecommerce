@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const WishlistModal = (props) => {
   const isAdding = useSelector((state) => state.wishlist.isAdding);
 
-  const modalMessage = isAdding ? "added" : "removed";
+  const modalMessage = isAdding ? "added to" : "removed from";
 
   return (
     <div>
@@ -15,7 +15,7 @@ const WishlistModal = (props) => {
           <h2>WishList</h2>
         </header>
         <div className={style.content}>
-          <p>Item has been {modalMessage} to your wishlist</p>
+          <p>Item has been {modalMessage} your wishlist</p>
         </div>
         <footer className={style.actions}>
           <button className={style.btn} onClick={props.onHide}>OK</button>

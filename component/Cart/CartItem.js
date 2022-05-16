@@ -8,8 +8,8 @@ const CartItem = (props) => {
 
   return (
     <div className={classes.container}>
-      <div>
-        <Image src={props.image} alt={props.set} width={100} height={100} />
+      <div className={classes.image}>
+        <Image src={props.image} alt={props.set} />
       </div>
       <div className={classes.description}>
         <p>

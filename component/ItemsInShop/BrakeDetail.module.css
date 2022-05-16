@@ -31,7 +31,6 @@
 }
 
 .image {
-  margin-top: 2px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -39,11 +38,19 @@
   align-items: center;
   position: relative;
 }
+.image ul {
+  padding: 0 0;
+  margin: 0 0;
+}
+
+.image li {
+  list-style: none;
+}
 
 .image h2 {
   position: absolute;
   text-align: center;
-  margin-top: 700px;
+  top: 90%;
   color: #d1cecf;
 }
 
@@ -52,6 +59,17 @@
   top: 71%;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
   text-align: center;
+}
+
+@media (max-width: 899px) {
+  .btn {
+    top: 70.5%;
+  }
+
+  .image h2 {
+    top: 90%;
+    color: #d1cecf;
+    font-size: 10px;
+  }
 }

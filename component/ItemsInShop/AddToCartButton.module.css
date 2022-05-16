@@ -20,3 +20,10 @@
 .btn:hover {
   box-shadow: inset 0 0 0 50px #ff5f00;
 }
+
+@media (max-width: 899px) {
+  .btn {
+    padding: 3px 28px;
+    font-size: 10px;
+  }
+}

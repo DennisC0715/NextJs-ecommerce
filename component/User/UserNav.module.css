@@ -7,6 +7,9 @@
   height: 1.5rem;
   padding: 0;
   border-top: 3px solid #f32424;
+  /* margin-top: 2rem; */
+  /* position: fixed;
+  width: 100%; */
 }
 
 .headerUser li {

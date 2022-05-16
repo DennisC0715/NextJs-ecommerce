@@ -52,16 +52,9 @@ const BrakeDetail = (props) => {
   };
 
   return (
-    <section>
-      <Swiper
-        pagination={{
-          type: "progressbar",
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className={classes.mySwiper}
-      >
-        <SwiperSlide>
+    <div className={classes.image}>
+      <ul>
+        <li>
           <div className={classes.image}>
             <div className={classes.image}>
               <Image src={detailImage} alt={set} width={960} height={808} />
@@ -73,35 +66,77 @@ const BrakeDetail = (props) => {
               {year} {made} {model} {engine}
             </h2>
           </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={classes.image}>
-            <Image src={productinfo} alt={set} width={960} height={808} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={classes.image}>
-            <Image src={drilledsloted} alt={set} width={960} height={808} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={classes.image}>
-            <Image src={Pads} alt={set} width={960} height={808} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={classes.image}>
-            <Image src={shippingDetail} alt={set} width={960} height={808} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className={classes.image}>
-            <Image src={returnDetail} alt={set} width={960} height={808} />
-          </div>
-        </SwiperSlide>
-      </Swiper>
-    </section>
+        </li>
+        <li className={classes.image}>
+          <Image src={productinfo} alt={set} width={960} height={808} />
+        </li>
+        <li className={classes.image}>
+          <Image src={drilledsloted} alt={set} width={960} height={808} />
+        </li>
+        <li className={classes.image}>
+          <Image src={Pads} alt={set} width={960} height={808} />
+        </li>
+        <li className={classes.image}>
+          <Image src={shippingDetail} alt={set} width={960} height={808} />
+        </li>
+        <li className={classes.image}>
+          <Image src={returnDetail} alt={set} width={960} height={808} />
+        </li>
+      </ul>
+    </div>
   );
+
+  // return (
+  //   <section>
+  //     <Swiper
+  //       pagination={{
+  //         type: "progressbar",
+  //       }}
+  //       navigation={true}
+  //       modules={[Pagination, Navigation]}
+  //       className={classes.mySwiper}
+  //     >
+  //       <SwiperSlide>
+  //         <div className={classes.image}>
+  //           <div className={classes.image}>
+  //             <Image src={detailImage} alt={set} width={960} height={808} />
+  //           </div>
+  //           <div className={classes.btn}>
+  //             <AddToCartButton onClick={detailButtonHandler} />
+  //           </div>
+  //           <h2>
+  //             {year} {made} {model} {engine}
+  //           </h2>
+  //         </div>
+  //       </SwiperSlide>
+  //       <SwiperSlide>
+  //         <div className={classes.image}>
+  //           <Image src={productinfo} alt={set} width={960} height={808} />
+  //         </div>
+  //       </SwiperSlide>
+  //       <SwiperSlide>
+  //         <div className={classes.image}>
+  //           <Image src={drilledsloted} alt={set} width={960} height={808} />
+  //         </div>
+  //       </SwiperSlide>
+  //       <SwiperSlide>
+  //         <div className={classes.image}>
+  //           <Image src={Pads} alt={set} width={960} height={808} />
+  //         </div>
+  //       </SwiperSlide>
+  //       <SwiperSlide>
+  //         <div className={classes.image}>
+  //           <Image src={shippingDetail} alt={set} width={960} height={808} />
+  //         </div>
+  //       </SwiperSlide>
+  //       <SwiperSlide>
+  //         <div className={classes.image}>
+  //           <Image src={returnDetail} alt={set} width={960} height={808} />
+  //         </div>
+  //       </SwiperSlide>
+  //     </Swiper>
+  //   </section>
+  // );
 };
 
 export default BrakeDetail;

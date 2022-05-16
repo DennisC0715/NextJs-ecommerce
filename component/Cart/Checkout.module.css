@@ -20,7 +20,7 @@
     color: rgb(26, 19, 19);
     border: 2px solid rgb(245, 112, 2);
     border-radius: 20px;
-    padding: 18px 36px;
+    padding: 13px 25px;
     display: inline-block;
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 20px;
@@ -31,9 +31,8 @@
     -webkit-transition: ease-out 0.4s;
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s;
-    width: 80%;
-    margin-top: 20px;
-    margin-left: 38px;
+    width: 48%;
+    margin: 0 1%;
   }
 
   .button:hover {
@@ -79,8 +78,8 @@
     -webkit-transition: ease-out 0.4s;
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s;
-    width: 45%;
-    margin: 10px 5px;
+    width: 48%;
+    margin: 0 1%;
   }
 
   .button:hover {

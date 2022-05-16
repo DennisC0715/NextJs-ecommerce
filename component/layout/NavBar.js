@@ -84,6 +84,11 @@ function NavBar() {
             &times;
           </a>
           <li className={classes.navbarLinksli} onClick={toggleNavbar}>
+            <Link href="https://github.com/DennisC0715/NextJs-ecommerce">
+              GitHub
+            </Link>
+          </li>
+          <li className={classes.navbarLinksli} onClick={toggleNavbar}>
             <Link href="/">Home</Link>
           </li>
           <li className={classes.navbarLinksli} onClick={toggleNavbar}>
