@@ -1,19 +1,18 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Pagination, Navigation } from "swiper";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { cartAddItem } from "../ReduxStore/slices/cartSlice";
-import drilledsloted from "../../component/detailPageImages/drilledsloted.jpg";
+import OESdescription from "../../component/detailPageImages/OESdescription.jpg";
 import Pads from "../../component/detailPageImages/Pads.jpg";
 import productinfo from "../../component/detailPageImages/productinfo.jpg";
 import returnDetail from "../../component/detailPageImages/returnDetail.jpg";
 import shippingDetail from "../../component/detailPageImages/shippingDetail.jpg";
 import AddToCartButton from "./AddToCartButton";
 import classes from "./BrakeDetail.module.css";
-import NavBar from "../layout/NavBar";
 
 const BrakeDetail = (props) => {
   const dispatch = useDispatch();
@@ -57,7 +56,7 @@ const BrakeDetail = (props) => {
         <li>
           <div className={classes.image}>
             <div className={classes.image}>
-              <Image src={detailImage} alt={set} width={960} height={808} />
+              <Image src={detailImage} alt={set} width={1200} height={908} />
             </div>
             <div className={classes.btn}>
               <AddToCartButton onClick={detailButtonHandler} />
@@ -68,9 +67,15 @@ const BrakeDetail = (props) => {
           </div>
         </li>
         <li className={classes.image}>
-          <Image src={productinfo} alt={set} width={960} height={808} />
+          <Image
+            src={OESdescription}
+            alt={set}
+            width={1200}
+            height={4378}
+            LCP
+          />
         </li>
-        <li className={classes.image}>
+        {/* <li className={classes.image}>
           <Image src={drilledsloted} alt={set} width={960} height={808} />
         </li>
         <li className={classes.image}>
@@ -81,7 +86,7 @@ const BrakeDetail = (props) => {
         </li>
         <li className={classes.image}>
           <Image src={returnDetail} alt={set} width={960} height={808} />
-        </li>
+        </li> */}
       </ul>
     </div>
   );
