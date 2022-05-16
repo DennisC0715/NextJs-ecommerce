@@ -9,12 +9,14 @@ import { logoutHandler } from "../ReduxStore/slices/authSlice";
 import { clearUserInfo } from "../ReduxStore/slices/userSlice";
 import { clearCart } from "../ReduxStore/slices/cartSlice";
 import { clearWishList } from "../ReduxStore/slices/wishListSlice";
+import { popLogoutModal } from "../ReduxStore/slices/modalSlice";
 import { useState } from "react";
 import LogoutModal from "../Modal/LogoutModal";
 
 function NavBar() {
   const [navbarShowed, setNavbarShowed] = useState(false);
   const userIsLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const showLogoutModal = useSelector((state) => state.modal.showModal);
   const dispatch = useDispatch();
 
   const router = useRouter();
@@ -50,8 +52,8 @@ function NavBar() {
   };
 
   const logoutAndToggle = () => {
+    dispatch(popLogoutModal());
     toggleNavbar();
-    logout();
   };
 
   const showNavbar = `${classes.navbarLinksul} ${
@@ -94,8 +96,9 @@ function NavBar() {
             <Link href={links}>Account</Link>
           </li>
           <li className={classes.navbarLinksli} onClick={logoutAndToggle}>
-            {userIsLoggedIn && <Link href="/">Logout</Link>}
+            {userIsLoggedIn && <Link href="">Logout</Link>}
           </li>
+          <li>{showLogoutModal && <LogoutModal></LogoutModal>}</li>
         </ul>
       </div>
     </nav>

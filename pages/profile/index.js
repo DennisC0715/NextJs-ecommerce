@@ -47,18 +47,20 @@ const Profile = (props) => {
       router.push("/login");
       return;
     }
-    const user = props.userInfo;
-
-    dispatch(addUserInfo(user));
-
-    console.log(webCart);
-    console.log(userCart);
-    console.log(webWishList);
-    console.log(userWishList);
+    
 
     // dispatch(mergeCarts(mergedCart));
     // dispatch(mergeWishlist(mergedWishList));
   });
+
+  const user = props.userInfo;
+
+  dispatch(addUserInfo(user));
+
+  console.log(webCart);
+  console.log(userCart);
+  console.log(webWishList);
+  console.log(userWishList);
 
   // dispatch(
   //   mergeUserCart({ mergedCart: mergedCart, mergedWishList: mergedWishList })

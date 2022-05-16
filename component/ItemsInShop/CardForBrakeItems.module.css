@@ -1,144 +1,136 @@
-/* .card {
-  border-color: #918d94;
-  border-style: solid;
-  margin-right: 20px;
-  max-width: 100%;
-  height: 100%;
-  background-color: white;
+@media (min-width: 900px) {
+  .card {
+    margin-bottom: 5px;
+    width: 100%;
+    height: auto;
+    background-color: white;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card h6 {
+    margin: 3px 0;
+    font-size: 0.5rem;
+  }
+
+  .card h3 {
+    display: inline;
+    width: 70%;
+    margin: 3px 0;
+    font-size: 1rem;
+  }
+  .card h4 {
+    margin: 10px 0;
+    height: 60px;
+  }
+
+  .description {
+    display: none;
+  }
+  .card h5 {
+    color: #ff4949;
+    font-size: 0.6rem;
+    margin: 5px 0;
+  }
+
+  .priceAndQuantity {
+    width: 100%;
+    display: flex;
+    height: 40px;
+  }
+
+  .card button {
+    color: rgb(26, 19, 19);
+    border: 2px solid rgb(245, 112, 2);
+    border-radius: 20px;
+    padding: 0.35rem 2rem;
+    display: inline-block;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 0.7rem;
+    text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #ff5f00;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    width: 45%;
+
+    margin: 2.5% 2.5%;
+  }
+
+  .card button:hover {
+    box-shadow: inset 0 0 0 50px #ff5f00;
+  }
 }
 
-.card img {
-  width: 100%;
-  height: auto;
-}
+@media (max-width: 899px) {
+  .card {
+    margin-bottom: 3px;
+    width: 100%;
+    height: auto;
+    background-color: white;
+  }
 
-.card h6 {
-  margin: 3px 0;
-  font-size: 1rem;
-}
+  .card img {
+    width: 100%;
+    height: auto;
+  }
 
-.card h3 {
-  display: inline;
-  width: 70%;
-  margin: 3px 0;
-  font-size: 2rem;
-}
-.card h4 {
-  margin: 10px 0;
-  height: 60px;
-}
+  .card h6 {
+    margin: 3px 0;
+    font-size: 0.5rem;
+  }
 
-.description {
-  width: 100%;
-  height: auto;
-  margin: 10px 0;
-}
-.card h5 {
-  color: #ff4949;
-  font-size: 1.2rem;
-  margin: 5px 0;
-}
+  .card h3 {
+    display: inline;
+    width: 70%;
+    margin: 3px 0;
+    font-size: 1rem;
+  }
+  .card h4 {
+    margin: 10px 0;
+    height: 60px;
+  }
 
-.priceAndQuantity {
-  width: 100%;
-  display: flex;
-  margin: 0 0;
-  height: 40px;
-}
+  .description {
+    display: none;
+  }
+  .card h5 {
+    color: #ff4949;
+    font-size: 0.6rem;
+    margin: 5px 0;
+  }
 
-.card button {
-  color: rgb(26, 19, 19);
-  border: 2px solid rgb(245, 112, 2);
-  border-radius: 20px;
-  padding: 5px 36px;
-  display: inline-block;
-  font-family: "Lucida Console", Monaco, monospace;
-  font-size: 20px;
-  text-align: center;
-  letter-spacing: 1px;
-  cursor: pointer;
-  box-shadow: inset 0 0 0 0 #ff5f00;
-  -webkit-transition: ease-out 0.4s;
-  -moz-transition: ease-out 0.4s;
-  transition: ease-out 0.4s;
-  width: 100%;
-  margin-top: 5px;
-}
+  .priceAndQuantity {
+    width: 100%;
+    display: flex;
+    height: 40px;
+  }
 
-.card button:hover {
-  box-shadow: inset 0 0 0 50px #ff5f00;
-} */
+  .card button {
+    color: rgb(26, 19, 19);
+    border: 2px solid rgb(245, 112, 2);
+    border-radius: 20px;
+    padding: 0.35rem 2rem;
+    display: inline-block;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 0.7rem;
+    text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #ff5f00;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    width: 90%;
+    margin: 0.5% 0;
+  }
 
-/* .containerforCord {
-  width: 100%;
-  height: auto;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: auto auto;
-} */
-
-.card {
-  margin-bottom: 3px;
-  width: 100%;
-  height: auto;
-  background-color: white;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-}
-
-.card h6 {
-  margin: 3px 0;
-  font-size: 0.5rem;
-}
-
-.card h3 {
-  display: inline;
-  width: 70%;
-  margin: 3px 0;
-  font-size: 1rem;
-}
-.card h4 {
-  margin: 10px 0;
-  height: 60px;
-}
-
-.description {
-  display: none;
-}
-.card h5 {
-  color: #ff4949;
-  font-size: 0.6rem;
-  margin: 5px 0;
-}
-
-.priceAndQuantity {
-  width: 100%;
-  display: flex;
-  height: 40px;
-}
-
-.card button {
-  color: rgb(26, 19, 19);
-  border: 2px solid rgb(245, 112, 2);
-  border-radius: 20px;
-  padding: 0.35rem 2rem;
-  display: inline-block;
-  font-family: "Lucida Console", Monaco, monospace;
-  font-size: 0.7rem;
-  text-align: center;
-  letter-spacing: 1px;
-  cursor: pointer;
-  box-shadow: inset 0 0 0 0 #ff5f00;
-  -webkit-transition: ease-out 0.4s;
-  -moz-transition: ease-out 0.4s;
-  transition: ease-out 0.4s;
-  width: 90%;
-  margin: 0.5% 0;
-}
-
-.card button:hover {
-  box-shadow: inset 0 0 0 50px #ff5f00;
+  .card button:hover {
+    box-shadow: inset 0 0 0 50px #ff5f00;
+  }
 }

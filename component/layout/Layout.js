@@ -3,21 +3,22 @@ import classes from "./Layout.module.css";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setIsLoggedIn } from "../ReduxStore/slices/authSlice";
-function Layout(props) {
-  const dispatch = useDispatch();
+import LogoutModal from "../Modal/LogoutModal";
 
-  useEffect(() => {
-    const initialToken = localStorage.getItem("token");
-    if (initialToken) {
-      dispatch(setIsLoggedIn());
-    }
-  });
+function Layout(props) {
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   const initialToken = localStorage.getItem("token");
+  //   if (initialToken) {
+  //     dispatch(setIsLoggedIn());
+  //   }
+  // });
 
   return (
     <div>
-      {/* <MainNavigation /> */}
       <NavBar />
       <main className={classes.main}>{props.children}</main>
       <Footer />
