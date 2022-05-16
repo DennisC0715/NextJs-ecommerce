@@ -18,7 +18,7 @@ const WishlistModal = (props) => {
           <p>Item has been {modalMessage} to your wishlist</p>
         </div>
         <footer className={style.actions}>
-          <button onClick={props.onHide}>OK</button>
+          <button className={style.btn} onClick={props.onHide}>OK</button>
         </footer>
       </Card>
     </div>

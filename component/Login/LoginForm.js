@@ -4,6 +4,9 @@ import useLogin from "./login-hook";
 import { useDispatch } from "react-redux";
 import { loginHandler, logoutHandler } from "../ReduxStore/slices/authSlice";
 import { useRouter } from "next/router";
+import { clearCart } from "../ReduxStore/slices/cartSlice";
+import { clearUserInfo } from "../ReduxStore/slices/userSlice";
+import { clearWishList } from "../ReduxStore/slices/wishListSlice";
 
 const LoginForm = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -96,11 +99,14 @@ const LoginForm = (props) => {
         const adjExpirationTime = new Date(expirationTime).getTime();
         const remainingTime = adjExpirationTime - currentTime;
 
+        console.log(remainingTime);
+        router.push("/profile");
         setTimeout(() => {
           dispatch(logoutHandler());
+          dispatch(clearCart());
+          dispatch(clearUserInfo());
+          dispatch(clearWishList());
         }, remainingTime);
-
-        router.push("/profile");
       })
       .catch((err) => {
         alert(err.message);

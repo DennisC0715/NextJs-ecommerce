@@ -1,0 +1,64 @@
+@media (min-width: 900px) {
+  .container {
+    height: auto;
+    display: flex;
+    width: 80%;
+    margin: auto auto;
+    margin-bottom: 8px;
+    background-color: #eeeeee;
+    padding: 0.2rem;
+    display: flex;
+  }
+
+  .text {
+    font-size: 0.8rem;
+    font-style: italic;
+    width: 50%;
+    margin: auto auto;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+  }
+
+  .price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+  }
+
+  .image {
+    margin: auto auto;
+  }
+}
+
+@media (max-width: 899px) {
+  .container {
+    height: auto;
+    display: flex;
+    width: 100%;
+    margin-bottom: 8px;
+    background-color: #eeeeee;
+    padding: 0.2rem;
+    display: flex;
+  }
+
+  .text {
+    font-size: 0.8rem;
+    font-style: italic;
+    width: 50%;
+    margin: auto auto;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+  }
+
+  .price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+  }
+
+  .image {
+    margin: auto auto;
+  }
+}

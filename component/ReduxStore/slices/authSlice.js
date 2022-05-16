@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 
+
 const initialState = {
   token: null,
   isLoggedIn: false,
@@ -17,7 +18,7 @@ const authSlice = createSlice({
     },
     logoutHandler: (state) => {
       localStorage.clear();
-      state.token = null;
+      localStorage.removeItem("token");
       state.isLoggedIn = false;
     },
     setIsLoggedIn: (state) => {

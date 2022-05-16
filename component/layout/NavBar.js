@@ -10,6 +10,7 @@ import { clearUserInfo } from "../ReduxStore/slices/userSlice";
 import { clearCart } from "../ReduxStore/slices/cartSlice";
 import { clearWishList } from "../ReduxStore/slices/wishListSlice";
 import { useState } from "react";
+import LogoutModal from "../Modal/LogoutModal";
 
 function NavBar() {
   const [navbarShowed, setNavbarShowed] = useState(false);
@@ -30,28 +31,27 @@ function NavBar() {
     router.push("/");
   };
 
-  const login = () => {
-    router.push("/login");
-  };
+  // const login = () => {
+  //   router.push("/login");
+  // };
 
-  const logInOrOut = userIsLoggedIn ? (
-    <button className={classes.btn} onClick={logout}>
-      Logout
-    </button>
-  ) : (
-    <button className={classes.btn} onClick={login}>
-      Login
-    </button>
-  );
+  // const logInOrOut = userIsLoggedIn ? (
+  //   <button className={classes.btn} onClick={logout}>
+  //     Logout
+  //   </button>
+  // ) : (
+  //   <button className={classes.btn} onClick={login}>
+  //     Login
+  //   </button>
+  // );
 
   const toggleNavbar = () => {
     setNavbarShowed((navbarShowed) => !navbarShowed);
   };
 
-  const timerToggle = () => {
-    setTimeout(() => {
-      setNavbarShowed((navbarShowed) => !navbarShowed);
-    }, 300);
+  const logoutAndToggle = () => {
+    toggleNavbar();
+    logout();
   };
 
   const showNavbar = `${classes.navbarLinksul} ${
@@ -81,17 +81,20 @@ function NavBar() {
           <a href="#" className={classes.closebtn} onClick={toggleNavbar}>
             &times;
           </a>
-          <li className={classes.navbarLinksli} onClick={timerToggle}>
+          <li className={classes.navbarLinksli} onClick={toggleNavbar}>
             <Link href="/">Home</Link>
           </li>
-          <li className={classes.navbarLinksli} onClick={timerToggle}>
+          <li className={classes.navbarLinksli} onClick={toggleNavbar}>
             <Link href="/shop">Shop</Link>
           </li>
-          <li className={classes.navbarLinksli} onClick={timerToggle}>
+          <li className={classes.navbarLinksli} onClick={toggleNavbar}>
             <Link href="/wishList">WishLists</Link>
           </li>
-          <li className={classes.navbarLinksli} onClick={timerToggle}>
+          <li className={classes.navbarLinksli} onClick={toggleNavbar}>
             <Link href={links}>Account</Link>
+          </li>
+          <li className={classes.navbarLinksli} onClick={logoutAndToggle}>
+            {userIsLoggedIn && <Link href="/">Logout</Link>}
           </li>
         </ul>
       </div>

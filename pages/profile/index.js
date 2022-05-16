@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -7,6 +7,12 @@ import { mergeCarts } from "../../component/ReduxStore/slices/cartSlice";
 import { mergeUserCart } from "../../component/ReduxStore/slices/userSlice";
 import UserNav from "../../component/User/UserNav";
 import { addUserInfo } from "../../component/ReduxStore/slices/userSlice";
+import LogoutModal from "../../component/Modal/LogoutModal";
+import { logoutHandler } from "../../component/ReduxStore/slices/authSlice";
+import { clearUserInfo } from "../../component/ReduxStore/slices/userSlice";
+import { clearCart } from "../../component/ReduxStore/slices/cartSlice";
+import { clearWishList } from "../../component/ReduxStore/slices/wishListSlice";
+import ProfilePageLayout from "../../component/ProfilePage/profilePageLayout";
 
 // import { MongoClient } from "mongodb";
 
@@ -17,6 +23,23 @@ const Profile = (props) => {
   const userCart = useSelector((state) => state.user.cart);
   const webWishList = useSelector((state) => state.wishlist.wishListItems);
   const userWishList = useSelector((state) => state.user.wishlist);
+  const showModalState = useSelector((state) => state.modal.showModal);
+
+  const showModalHandler = () => {
+    setShowLogoutModal(true);
+  };
+
+  const hideModalHandler = () => {
+    setShowLogoutModal(false);
+  };
+
+  const logoutFunction = () => {
+    setShowLogoutModal(false);
+    dispatch(logoutHandler());
+    dispatch(clearUserInfo());
+    dispatch(clearCart());
+    dispatch(clearWishList());
+  };
 
   useEffect(() => {
     const initialToken = localStorage.getItem("token");
@@ -25,6 +48,7 @@ const Profile = (props) => {
       return;
     }
     const user = props.userInfo;
+
     dispatch(addUserInfo(user));
 
     console.log(webCart);
@@ -42,15 +66,19 @@ const Profile = (props) => {
 
   return (
     <Fragment>
-      <Head>
-        <title>profile</title>
-        <meta charset="uft-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-      </Head>
-      <UserNav userfirstName={props.userInfo.firstName} />
-      <h1>User profile</h1>
-      <h1>addresses</h1>
-      <h1>change password</h1>
+      <ProfilePageLayout userfirstName={props.userInfo.firstName}>
+        <Head>
+          <title>profile</title>
+          <meta charset="uft-8" />
+          <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1.0"
+          />
+        </Head>
+        <h1>User profile</h1>
+        <h1>addresses</h1>
+        <h1>change password</h1>
+      </ProfilePageLayout>
     </Fragment>
   );
 };

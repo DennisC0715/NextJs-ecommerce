@@ -13,6 +13,7 @@ import returnDetail from "../../component/detailPageImages/returnDetail.jpg";
 import shippingDetail from "../../component/detailPageImages/shippingDetail.jpg";
 import AddToCartButton from "./AddToCartButton";
 import classes from "./BrakeDetail.module.css";
+import NavBar from "../layout/NavBar";
 
 const BrakeDetail = (props) => {
   const dispatch = useDispatch();
