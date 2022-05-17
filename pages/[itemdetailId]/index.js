@@ -1,8 +1,4 @@
 import BrakeDetail from "../../component/ItemsInShop/BrakeDetail";
-import fullset from "../../component/detailPageImages/fullsetdetail.jpg";
-import frontset from "../../component/detailPageImages/frontsetdetail.jpg";
-import rearset from "../../component/detailPageImages/rearsetdetail.jpg";
-import oesfull from "../../component/img/OESFull.jpg";
 import { Fragment } from "react";
 import Head from "next/head";
 
@@ -11,7 +7,7 @@ const ItemDetail = (props) => {
     <Fragment>
       <Head>
         <title>detial</title>
-        <meta charset="uft-8" />
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
       </Head>
       <BrakeDetail
@@ -24,15 +20,14 @@ const ItemDetail = (props) => {
         model={props.detailData.model}
         key={props.detailData.id}
         id={props.detailData.id}
-        isFavorite={props.detailData.isFavorite}
         description={props.detailData.description}
+        coating={props.detailData.coating}
         price={props.detailData.price}
         item={props.detailData}
       />
     </Fragment>
   );
 };
-
 
 export async function getStaticPaths() {
   return {
@@ -69,9 +64,12 @@ export async function getStaticProps(context) {
         made: "RAM",
         model: "1500",
         engine: "ALL ENGINE",
+        coating: "silver",
         price: "500",
-        detailImage: fullset,
-        image: oesfull,
+        detailImage:
+          "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XFULLdes.jpg?alt=media&token=21ffd07b-884b-4dd0-8fd5-e1f9f6561f5d",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XSFR.jpg?alt=media&token=7a37b3d4-c550-4874-8949-7de5d713d095",
         description:
           "It includes included 4 (2 FRONT, 2 REAR) Brake Roters and 8 (4 FRONT, 4 REAR) Brake Pads.",
       },

@@ -71,7 +71,7 @@ const Profile = (props) => {
       <ProfilePageLayout userfirstName={props.userInfo.firstName}>
         <Head>
           <title>profile</title>
-          <meta charset="uft-8" />
+          <meta charset="utf-8" />
           <meta
             name="viewport"
             content="width=device-width,initial-scale=1.0"

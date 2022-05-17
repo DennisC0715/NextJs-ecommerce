@@ -4,6 +4,7 @@
     width: 100%;
     height: auto;
     background-color: white;
+    padding: 5px 5px;
   }
 
   .card img {
@@ -13,7 +14,7 @@
 
   .card h6 {
     margin: 3px 0;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
   }
 
   .card h3 {
@@ -32,7 +33,7 @@
   }
   .card h5 {
     color: #ff4949;
-    font-size: 0.6rem;
+    font-size: 1rem;
     margin: 5px 0;
   }
 

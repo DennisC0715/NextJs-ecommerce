@@ -45,6 +45,7 @@ const BrakeItems = (props) => {
       price={item.price}
       image={item.image}
       description={item.description}
+      coating={item.coating}
       onAddItem={addItemHandler.bind(null, item)}
       toggleWishList={toggleWishListHandler.bind(null, item)}
     />
