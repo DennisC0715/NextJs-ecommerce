@@ -18,6 +18,33 @@ const handler = async (req, res) => {
       message: `User: ${data.firstName} ${data.lastName} inserted!`,
     });
   }
+
+  if (req.method === "PATCH") {
+    const data = req.body;
+    const filter = data.email;
+    const update = data.cart;
+
+    console.log(filter);
+    console.log(update);
+
+    const client = await MongoClient.connect(
+      "mongodb+srv://dennis:qwe123@cluster0.h3bzw.mongodb.net/areionUserInfo?retryWrites=true&w=majority"
+    );
+    const dataBase = client.db();
+    const areionUserInfoCollection = dataBase.collection("areionUserInfo");
+    const result = await areionUserInfoCollection.updateOne(
+      { email: filter },
+      { $set: { cart: update } }
+    );
+
+    console.log(result);
+
+    client.close();
+    
+    res.status(201).json({
+      message: `User: ${data.firstName} ${data.lastName} updated!`,
+    });
+  }
 };
 
 export default handler;
