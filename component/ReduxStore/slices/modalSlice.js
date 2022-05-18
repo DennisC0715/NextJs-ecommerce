@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialModalState = {
   showModal: false,
+  isModelShowed: false,
 };
 
 const modalSlice = createSlice({
@@ -10,9 +11,11 @@ const modalSlice = createSlice({
   reducers: {
     popLogoutModal: (state) => {
       state.showModal = true;
+      state.isModelShowed = true;
     },
     hideLogoutModal: (state) => {
       state.showModal = false;
+      state.isModelShowed = false;
     },
   },
 });

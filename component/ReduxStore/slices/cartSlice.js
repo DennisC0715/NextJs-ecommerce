@@ -32,9 +32,6 @@ export const cartSlice = createSlice({
         updatedItems = [...state.cartItems];
         updatedItems[existingItemIndex] = updatedItem;
       }
-      console.log(state.cartItems);
-      console.log(state.cartItemNumber);
-      console.log(state.totalPrice);
     },
     cartRemoveItemQuantity: (state, action) => {
       const id = action.payload;
@@ -60,14 +57,21 @@ export const cartSlice = createSlice({
       state.cartItemNumber = 0;
     },
     mergeCarts: (state, action) => {
-      state.cartItems = action.payload;
-      state.cartItemNumber = state.cartItems.length;
+      const userCart = action.payload;
+      state.cartItems = userCart;
+      console.log(state.cartItems);
+      const quantity = state.cartItems.map((item) => item.quantity);
       const prices = state.cartItems.map((item) => item.price);
+      let totalQuantity = 0;
       let allPrice = 0;
       for (let i = 0; i < state.cartItems.length; i++) {
-        allPrice += prices[i];
+        allPrice += prices[i] * quantity[i];
+        totalQuantity += quantity[i];
       }
+      state.cartItemNumber = totalQuantity;
+      console.log(totalQuantity);
       state.totalPrice = allPrice;
+      console.log(allPrice);
     },
   },
 });

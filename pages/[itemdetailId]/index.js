@@ -48,6 +48,21 @@ export async function getStaticPaths() {
           itemdetailId: "b3",
         },
       },
+      {
+        params: {
+          itemdetailId: "b4",
+        },
+      },
+      {
+        params: {
+          itemdetailId: "b5",
+        },
+      },
+      {
+        params: {
+          itemdetailId: "b6",
+        },
+      },
     ],
   };
 }

@@ -4,13 +4,12 @@ import { Fragment, useDebugValue } from "react";
 import { useSelector } from "react-redux";
 
 const ProfilePageLayout = (props) => {
-  const showModalState = useSelector((state) => state.modal.showModal);
-  const { userfirstName } = props;
+  const { userFirstName } = props;
 
   return (
     <Fragment>
-      <UserNav userfirstName={userfirstName} />
-      {showModalState && <LogoutModal />}
+      <UserNav userFirstName={userFirstName} />
+
       <div>{props.children}</div>
     </Fragment>
   );

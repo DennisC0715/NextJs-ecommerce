@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useEffect } from "react";
-
 
 const initialState = {
   token: null,
@@ -24,8 +22,12 @@ const authSlice = createSlice({
     setIsLoggedIn: (state) => {
       state.isLoggedIn = true;
     },
+    getTokenFromLocal: (state) => {
+      localStorage.getItem("token");
+    },
   },
 });
 
-export const { loginHandler, logoutHandler, setIsLoggedIn } = authSlice.actions;
+export const { loginHandler, logoutHandler, setIsLoggedIn, getTokenFromLocal } =
+  authSlice.actions;
 export default authSlice.reducer;

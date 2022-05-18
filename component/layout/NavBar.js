@@ -5,7 +5,10 @@ import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
 import writelogo from "../img/Areion_Decal_Inverted_1.png";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutHandler } from "../ReduxStore/slices/authSlice";
+import {
+  logoutHandler,
+  getTokenFromLocal,
+} from "../ReduxStore/slices/authSlice";
 import { clearUserInfo } from "../ReduxStore/slices/userSlice";
 import { clearCart } from "../ReduxStore/slices/cartSlice";
 import { clearWishList } from "../ReduxStore/slices/wishListSlice";
@@ -18,8 +21,12 @@ function NavBar() {
   const userIsLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const showLogoutModal = useSelector((state) => state.modal.showModal);
   const dispatch = useDispatch();
-
   const router = useRouter();
+
+  // useEffect(() => {
+  //   const isLoggedIn = localStorage.getItem("token");
+  //   return isLoggedIn;
+  // }, []);
 
   const homePage = () => {
     router.push("/");
@@ -30,22 +37,9 @@ function NavBar() {
     dispatch(clearUserInfo());
     dispatch(clearCart());
     dispatch(clearWishList());
+
     router.push("/");
   };
-
-  // const login = () => {
-  //   router.push("/login");
-  // };
-
-  // const logInOrOut = userIsLoggedIn ? (
-  //   <button className={classes.btn} onClick={logout}>
-  //     Logout
-  //   </button>
-  // ) : (
-  //   <button className={classes.btn} onClick={login}>
-  //     Login
-  //   </button>
-  // );
 
   const toggleNavbar = () => {
     setNavbarShowed((navbarShowed) => !navbarShowed);
@@ -103,7 +97,6 @@ function NavBar() {
           <li className={classes.navbarLinksli} onClick={logoutAndToggle}>
             {userIsLoggedIn && <Link href="">Logout</Link>}
           </li>
-          <li>{showLogoutModal && <LogoutModal></LogoutModal>}</li>
         </ul>
       </div>
     </nav>

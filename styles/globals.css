@@ -26,11 +26,11 @@ a {
 @media only screen and (max-width: 899px) {
   html,
   body {
+    background-image: url("../component/HomepageImage/areionlogo.png");
     background-color: #b22727;
-    /* background-image: url("../component/img/Areion_Decal_Inverted_1.png"); */
-    /* background-size: 80% 9%; */
+    height: auto;
     background-position: center;
-    
-    min-height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
   }
 }

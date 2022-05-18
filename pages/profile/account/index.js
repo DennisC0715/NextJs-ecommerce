@@ -4,8 +4,10 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Head from "next/head";
 import ProfilePageLayout from "../../../component/ProfilePage/profilePageLayout";
+import { useSelector } from "react-redux";
 
 const AccountPage = () => {
+  const firstName = useSelector((state) => state.user.firstName);
   const router = useRouter();
 
   useEffect(() => {
@@ -17,7 +19,7 @@ const AccountPage = () => {
 
   return (
     <Fragment>
-      <ProfilePageLayout>
+      <ProfilePageLayout userFirstName={firstName}>
         <Head>
           <title>account Information Page</title>
           <meta charset="utf-8" />

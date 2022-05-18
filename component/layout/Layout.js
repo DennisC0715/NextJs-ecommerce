@@ -17,7 +17,7 @@ function Layout(props) {
   //     dispatch(setIsLoggedIn());
   //   }
   // });
-
+  const showLogoutModal = useSelector((state) => state.modal.showModal);
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
@@ -40,6 +40,7 @@ function Layout(props) {
   return (
     <div>
       {showButton && <ScrollTop onScrollTop={scrollToTop} />}
+      {showLogoutModal && <LogoutModal></LogoutModal>}
       <NavBar />
       <main className={classes.main}>{props.children}</main>
       <Footer />

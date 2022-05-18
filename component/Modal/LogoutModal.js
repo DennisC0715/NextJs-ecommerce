@@ -7,12 +7,17 @@ import { clearWishList } from "../ReduxStore/slices/wishListSlice";
 import { logoutHandler } from "../ReduxStore/slices/authSlice";
 import { hideLogoutModal } from "../ReduxStore/slices/modalSlice";
 import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 
-const LogoutModal = () => {
+const LogoutModal = (props) => {
   const isUserLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
+  const router = useRouter();
+  const { toggleSideBar, navbarIsShowed } = props;
+
   const hideModal = () => {
     dispatch(hideLogoutModal());
+    
   };
 
   const lougoutHandler = () => {
@@ -22,7 +27,8 @@ const LogoutModal = () => {
       dispatch(clearCart());
       dispatch(clearWishList());
       dispatch(clearUserInfo());
-    }, 1500);
+      router.push("/login");
+    }, 500);
   };
   return (
     <div>
@@ -40,7 +46,7 @@ const LogoutModal = () => {
         </div>
         <footer className={style.actions}>
           <button className={style.btn} onClick={hideModal}>
-            Keep me logged in
+            Keep logging in
           </button>
           <button className={style.btn} onClick={lougoutHandler}>
             Log out anyway

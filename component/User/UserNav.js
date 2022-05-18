@@ -5,7 +5,7 @@ import { popLogoutModal } from "../ReduxStore/slices/modalSlice";
 
 const UserNav = (props) => {
   const dispatch = useDispatch();
-  const firstName = useSelector((state) => state.user.firstName);
+  const firstName = props.userFirstName;
 
   const showLogoutModal = () => {
     dispatch(popLogoutModal());

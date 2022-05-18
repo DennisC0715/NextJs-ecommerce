@@ -42,15 +42,23 @@ const userSlice = createSlice({
       state.wishlist = userInfo.wishlistt;
       state.orderHistory = userInfo.orderHistory;
       // state.initialUserState = action.payload;
+      console.log(userInfo.cart);
     },
     mergeUserCart: (state, action) => {
-      const cart = action.payload.mergedCart;
-      const wishlist = action.payload.mergedWishList;
-      state.cart = cart;
-      state.wishlist = wishlist;
+      const webCart = action.payload;
+      const userCart = state.cart;
+      const mergeCart = [...new Set([...webCart, ...userCart])];
+      state.cart = mergeCart;
+    },
+    mergeUserWishlist: (state, action) => {
+      const webWishlist = action.payload;
+      const userWishlist = state.cart;
+      const mergeWishlist = [...new Set([...webWishlist, ...userWishlist])];
+      state.wishlist = mergeWishlist;
     },
   },
 });
 
-export const { clearUserInfo, addUserInfo, mergeUserCart } = userSlice.actions;
+export const { clearUserInfo, addUserInfo, mergeUserCart, mergeUserWishlist } =
+  userSlice.actions;
 export default userSlice.reducer;

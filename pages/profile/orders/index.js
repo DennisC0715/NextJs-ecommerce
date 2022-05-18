@@ -1,13 +1,13 @@
 import { Fragment } from "react";
-import UserNav from "../../../component/User/UserNav";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Head from "next/head";
 import OrderHistoryPage from "../../../component/ProfilePage/OrderHistoryPage";
-import LogoutModal from "../../../component/Modal/LogoutModal";
 import ProfilePageLayout from "../../../component/ProfilePage/profilePageLayout";
+import { useSelector } from "react-redux";
 
-const Orderpage = () => {
+const Orderpage = (props) => {
+  const firstName = useSelector(state=>state.user.firstName);
   const router = useRouter();
   useEffect(() => {
     const initialToken = localStorage.getItem("token");
@@ -18,7 +18,7 @@ const Orderpage = () => {
 
   return (
     <Fragment>
-      <ProfilePageLayout>
+      <ProfilePageLayout userFirstName={firstName}>
         <Head>
           <title>orderHistory Page</title>
           <meta charset="utf-8" />

@@ -14,7 +14,7 @@ const Dummy_Brakes = [
     model: "1500",
     engine: "ALL ENGINE",
     coating: "silver",
-    price: "500",
+    price: 500,
     detailImage:
       "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XFULLdes.jpg?alt=media&token=21ffd07b-884b-4dd0-8fd5-e1f9f6561f5d",
     image:
@@ -30,9 +30,9 @@ const Dummy_Brakes = [
     model: "1500",
     engine: "ALL ENGINE",
     coating: "silver",
-    price: "320",
+    price: 320,
     image:
-      "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XF.jpg?alt=media&token=304a6cab-2a3c-4c95-8f38-f3831c388ee6",
+      "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XFront.jpg?alt=media&token=e75adb56-1df7-48b3-885f-6cd321052e8d",
     detailImage:
       "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XFrontDes.jpg?alt=media&token=d734240b-d33f-4516-a54d-f2614eb1e267",
     description:
@@ -46,9 +46,9 @@ const Dummy_Brakes = [
     model: "1500",
     engine: "ALL ENGINE",
     coating: "silver",
-    price: "200",
+    price: 200,
     image:
-      "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XR.jpg?alt=media&token=867fa123-89ea-46dc-9b28-2470034de170",
+      "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XRear.jpg?alt=media&token=9a2b31d1-dca3-4c58-bc9e-58f5f0692ff1",
     detailImage:
       "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XREARDes.jpg?alt=media&token=01b3e521-89e1-4a03-9d55-662245a90642",
     description:
@@ -62,9 +62,9 @@ const Dummy_Brakes = [
     model: "F-150",
     engine: "ALL ENGINE",
     coating: "silver",
-    price: "500",
+    price: 500,
     detailImage:
-      "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XFULLdes.jpg?alt=media&token=21ffd07b-884b-4dd0-8fd5-e1f9f6561f5d",
+      "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XSFR.jpg?alt=media&token=7a37b3d4-c550-4874-8949-7de5d713d095",
     image:
       "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XSFR.jpg?alt=media&token=7a37b3d4-c550-4874-8949-7de5d713d095",
     description:
@@ -78,9 +78,9 @@ const Dummy_Brakes = [
     model: "F-150",
     engine: "ALL ENGINE",
     coating: "silver",
-    price: "320",
+    price: 320,
     image:
-      "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XF.jpg?alt=media&token=304a6cab-2a3c-4c95-8f38-f3831c388ee6",
+      "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XFront.jpg?alt=media&token=e75adb56-1df7-48b3-885f-6cd321052e8d",
     detailImage:
       "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XFrontDes.jpg?alt=media&token=d734240b-d33f-4516-a54d-f2614eb1e267",
     description:
@@ -94,9 +94,9 @@ const Dummy_Brakes = [
     model: "F-150",
     engine: "ALL ENGINE",
     coating: "black",
-    price: "200",
+    price: 200,
     image:
-      "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XBR.jpg?alt=media&token=9f8b19ca-f35e-47ff-b713-fb8d098e47fd",
+      "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XBRear.jpg?alt=media&token=b31ccce3-1eb4-40f7-8bca-22e77ac21c1b",
     detailImage:
       "https://firebasestorage.googleapis.com/v0/b/areion.appspot.com/o/XB%20RearDes.jpg?alt=media&token=e7e7566c-9253-4a72-8ba6-17eb1cd37fb8",
     description:
