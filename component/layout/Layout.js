@@ -9,16 +9,16 @@ import { useRouter } from "next/router";
 
 function Layout(props) {
   const dispatch = useDispatch();
-  const router = useRouter();
+  // const router = useRouter();
 
-  useEffect(() => {
-    const initialToken = localStorage.getItem("token");
-    if (initialToken) {
-      dispatch(setIsLoggedIn());
-    } else {
-      router.push("/login");
-    }
-  });
+  // useEffect(() => {
+  //   const initialToken = localStorage.getItem("token");
+  //   if (initialToken) {
+  //     dispatch(setIsLoggedIn());
+  //   } else {
+  //     router.push("/login");
+  //   }
+  // });
 
   const [showButton, setShowButton] = useState(false);
 
