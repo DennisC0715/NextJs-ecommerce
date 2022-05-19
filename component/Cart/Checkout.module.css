@@ -7,6 +7,12 @@
     position: sticky;
   }
 
+  .container p {
+    font-size: 180%;
+    font-weight: bold;
+    font-style: italic;
+  }
+
   .split {
     float: right;
     margin-right: 10px;

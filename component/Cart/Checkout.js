@@ -24,7 +24,7 @@ const Checkout = (props) => {
         <span className={classes.split}>${saleTax}</span>
       </h3>
       <p>
-        <span>Total</span>
+        <span>TOTAL</span>
         <span className={classes.split}>${totalPrice}</span>
       </p>
       <botton className={classes.button} onClick={props.onShowCartModal}>

@@ -16,6 +16,7 @@ const Profile = (props) => {
   const router = useRouter();
   const webCart = useSelector((state) => state.cart.cartItems); //cart of website
   const webWishList = useSelector((state) => state.wishlist.wishListItems); //wishlist of website
+  const userCart = useSelector((state) => state.user.cart);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +34,8 @@ const Profile = (props) => {
       dispatch(mergeUserWishlist(webWishList));
 
       console.log(webCart);
-      console.log(webWishList);
+      console.log(userCart);
+
       //if cart on website is empty, merge cart[] from userinfo from server
       if (webCart.length !== 0) {
         fetch("/api/userInfo", {
