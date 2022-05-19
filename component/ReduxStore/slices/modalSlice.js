@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialModalState = {
-  showModal: false,
-  isModelShowed: false,
+  showLogoutModal: false,
+  showCartModal: false,
 };
 
 const modalSlice = createSlice({
@@ -10,15 +10,20 @@ const modalSlice = createSlice({
   initialState: initialModalState,
   reducers: {
     popLogoutModal: (state) => {
-      state.showModal = true;
-      state.isModelShowed = true;
+      state.showLogoutModal = true;
     },
     hideLogoutModal: (state) => {
-      state.showModal = false;
-      state.isModelShowed = false;
+      state.showLogoutModal = false;
+    },
+    popCartModal: (state) => {
+      state.showCartModal = true;
+    },
+    hideCartModal: (state) => {
+      state.showCartModal = false;
     },
   },
 });
 
-export const { popLogoutModal, hideLogoutModal } = modalSlice.actions;
+export const { popLogoutModal, hideLogoutModal, popCartModal, hideCartModal } =
+  modalSlice.actions;
 export default modalSlice.reducer;

@@ -5,39 +5,16 @@ import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
 import writelogo from "../img/Areion_Decal_Inverted_1.png";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  logoutHandler,
-  getTokenFromLocal,
-} from "../ReduxStore/slices/authSlice";
-import { clearUserInfo } from "../ReduxStore/slices/userSlice";
-import { clearCart } from "../ReduxStore/slices/cartSlice";
-import { clearWishList } from "../ReduxStore/slices/wishListSlice";
 import { popLogoutModal } from "../ReduxStore/slices/modalSlice";
 import { useState } from "react";
-import LogoutModal from "../Modal/LogoutModal";
 
 function NavBar() {
   const [navbarShowed, setNavbarShowed] = useState(false);
   const userIsLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-  const showLogoutModal = useSelector((state) => state.modal.showModal);
   const dispatch = useDispatch();
   const router = useRouter();
 
-  // useEffect(() => {
-  //   const isLoggedIn = localStorage.getItem("token");
-  //   return isLoggedIn;
-  // }, []);
-
   const homePage = () => {
-    router.push("/");
-  };
-
-  const logout = () => {
-    dispatch(logoutHandler());
-    dispatch(clearUserInfo());
-    dispatch(clearCart());
-    dispatch(clearWishList());
-
     router.push("/");
   };
 
@@ -84,6 +61,9 @@ function NavBar() {
           </li>
           <li className={classes.navbarLinksli} onClick={toggleNavbar}>
             <Link href="/">Home</Link>
+          </li>
+          <li className={classes.navbarLinksli} onClick={toggleNavbar}>
+            <Link href="/cart">Cart</Link>
           </li>
           <li className={classes.navbarLinksli} onClick={toggleNavbar}>
             <Link href="/shop">Shop</Link>

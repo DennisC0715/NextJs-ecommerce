@@ -8,16 +8,16 @@ import { logoutHandler } from "../ReduxStore/slices/authSlice";
 import { hideLogoutModal } from "../ReduxStore/slices/modalSlice";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
+import { setIsLoggedIn } from "../ReduxStore/slices/authSlice";
 
 const LogoutModal = (props) => {
   const isUserLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
   const router = useRouter();
-  const { toggleSideBar, navbarIsShowed } = props;
 
   const hideModal = () => {
     dispatch(hideLogoutModal());
-    
+    dispatch(setIsLoggedIn());
   };
 
   const lougoutHandler = () => {

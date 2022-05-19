@@ -107,6 +107,7 @@ const LoginForm = (props) => {
           dispatch(clearUserInfo());
           dispatch(clearWishList());
         }, remainingTime);
+        console.log(remainingTime);
       })
       .catch((err) => {
         alert(err.message);

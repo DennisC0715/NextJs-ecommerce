@@ -9,10 +9,14 @@ import {
   cartRemoveOneItem,
   clearCart,
 } from "../ReduxStore/slices/cartSlice";
+import ClearCartModal from "../Modal/ClearCartModal";
+import { hideCartModal, popCartModal } from "../ReduxStore/slices/modalSlice";
+import { Fragment } from "react";
 
 const Cart = () => {
   const cartItem = useSelector((state) => state.cart.cartItems);
   const cartItemNumber = useSelector((state) => state.cart.cartItemNumber);
+  const showCartModal = useSelector((state) => state.modal.showCartModal);
   const dispatch = useDispatch();
   const showSummary = cartItemNumber > 0;
 
@@ -30,6 +34,15 @@ const Cart = () => {
 
   const clearCartHandler = () => {
     dispatch(clearCart());
+    dispatch(hideCartModal());
+  };
+
+  const hideCartModalHandler = () => {
+    dispatch(hideCartModal());
+  };
+
+  const showCartModalHandler = () => {
+    dispatch(popCartModal());
   };
 
   const itemsInCart = cartItem.map((item) => (
@@ -67,16 +80,26 @@ const Cart = () => {
   );
 
   return (
-    <div className={classes.container}>
-      <div className={classes.text}>
-        <h2>{bagText}</h2>
-        <h4>{text}</h4>
+    <Fragment>
+      {showCartModal && (
+        <ClearCartModal
+          onHideModal={hideCartModalHandler}
+          onClearCart={clearCartHandler}
+        />
+      )}
+      <div className={classes.container}>
+        <div className={classes.text}>
+          <h2>{bagText}</h2>
+          <h4>{text}</h4>
+        </div>
+        <div>
+          <span>{itemsInCart}</span>
+          <span>
+            {showSummary && <Checkout onShowCartModal={showCartModalHandler} />}
+          </span>
+        </div>
       </div>
-      <div>
-        <span>{itemsInCart}</span>
-        <span>{showSummary && <Checkout ClearCart={clearCartHandler} />}</span>
-      </div>
-    </div>
+    </Fragment>
   );
 };
 

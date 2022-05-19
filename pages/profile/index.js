@@ -16,8 +16,6 @@ const Profile = (props) => {
   const router = useRouter();
   const webCart = useSelector((state) => state.cart.cartItems); //cart of website
   const webWishList = useSelector((state) => state.wishlist.wishListItems); //wishlist of website
-  const userCart = useSelector((state) => state.user.cart);
-  const userWishlist = useSelector((state) => state.user.wishlist);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,20 +26,23 @@ const Profile = (props) => {
     } else {
       console.log("merging");
       const user = props.userInfo;
-      dispatch(addUserInfo(user));
-
+      dispatch(addUserInfo(user)); //merge userdata from server to userSlice
       dispatch(mergeCarts(user.cart));
       dispatch(mergeWishlist(user.wishlist));
       dispatch(mergeUserCart(webCart));
       dispatch(mergeUserWishlist(webWishList));
 
       console.log(webCart);
-      console.log(webCart);
-
+      console.log(webWishList);
+      //if cart on website is empty, merge cart[] from userinfo from server
       if (webCart.length !== 0) {
         fetch("/api/userInfo", {
           method: "PATCH",
-          body: JSON.stringify({ email: user.email, cart: webCart }),
+          body: JSON.stringify({
+            email: user.email,
+            cart: webCart,
+            wishlist: webWishList,
+          }),
           headers: {
             "Content-Type": "application/json",
           },

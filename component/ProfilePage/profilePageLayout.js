@@ -9,7 +9,6 @@ const ProfilePageLayout = (props) => {
   return (
     <Fragment>
       <UserNav userFirstName={userFirstName} />
-
       <div>{props.children}</div>
     </Fragment>
   );

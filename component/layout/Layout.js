@@ -1,23 +1,25 @@
-import MainNavigation from "./MainNavigation";
 import classes from "./Layout.module.css";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
 import ScrollTop from "./ScrollToTop";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setIsLoggedIn } from "../ReduxStore/slices/authSlice";
-import LogoutModal from "../Modal/LogoutModal";
+import { useRouter } from "next/router";
 
 function Layout(props) {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const router = useRouter();
 
-  // useEffect(() => {
-  //   const initialToken = localStorage.getItem("token");
-  //   if (initialToken) {
-  //     dispatch(setIsLoggedIn());
-  //   }
-  // });
-  const showLogoutModal = useSelector((state) => state.modal.showModal);
+  useEffect(() => {
+    const initialToken = localStorage.getItem("token");
+    if (initialToken) {
+      dispatch(setIsLoggedIn());
+    } else {
+      router.push("/login");
+    }
+  });
+
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
@@ -40,7 +42,6 @@ function Layout(props) {
   return (
     <div>
       {showButton && <ScrollTop onScrollTop={scrollToTop} />}
-      {showLogoutModal && <LogoutModal></LogoutModal>}
       <NavBar />
       <main className={classes.main}>{props.children}</main>
       <Footer />

@@ -27,7 +27,7 @@ const Checkout = (props) => {
         <span>Total</span>
         <span className={classes.split}>${totalPrice}</span>
       </p>
-      <botton className={classes.button} onClick={props.ClearCart}>
+      <botton className={classes.button} onClick={props.onShowCartModal}>
         Clear
       </botton>
       <botton className={classes.button}>Checkout</botton>

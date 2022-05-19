@@ -7,7 +7,7 @@ import ProfilePageLayout from "../../../component/ProfilePage/profilePageLayout"
 import { useSelector } from "react-redux";
 
 const Orderpage = (props) => {
-  const firstName = useSelector(state=>state.user.firstName);
+  const firstName = useSelector((state) => state.user.firstName);
   const router = useRouter();
   useEffect(() => {
     const initialToken = localStorage.getItem("token");
