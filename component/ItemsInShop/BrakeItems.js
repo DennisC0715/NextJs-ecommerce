@@ -12,8 +12,7 @@ const BrakeItems = (props) => {
   const addItemHandler = (item) => {
     dispatch(
       cartAddItem({
-        id: item.id,
-        key: item.key,
+        id: item.id,   
         detailImage: item.detailImage,
         set: item.set,
         year: item.year,
@@ -22,7 +21,6 @@ const BrakeItems = (props) => {
         engine: item.engine,
         price: item.price,
         image: item.image,
-        isFavorite: item.isFavorite,
         description: item.description,
         quantity: 1,
       })

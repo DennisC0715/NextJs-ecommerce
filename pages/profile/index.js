@@ -17,7 +17,11 @@ const Profile = (props) => {
   const webCart = useSelector((state) => state.cart.cartItems); //cart of website
   const webWishList = useSelector((state) => state.wishlist.wishListItems); //wishlist of website
   const userCart = useSelector((state) => state.user.cart);
+  const userWishlist = useSelector((state) => state.user.wishlist);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
+  console.log(userCart);
+  console.log(webCart);
 
   useEffect(() => {
     const initialToken = localStorage.getItem("token");
@@ -27,17 +31,13 @@ const Profile = (props) => {
     } else {
       console.log("merging");
       const user = props.userInfo;
-      dispatch(addUserInfo(user)); //merge userdata from server to userSlice
-      dispatch(mergeCarts(user.cart));
-      dispatch(mergeWishlist(user.wishlist));
-      dispatch(mergeUserCart(webCart));
-      dispatch(mergeUserWishlist(webWishList));
+      dispatch(addUserInfo(user)); //add userdata from server to userSlice
 
-      console.log(webCart);
-      console.log(userCart);
-
-      //if cart on website is empty, merge cart[] from userinfo from server
       if (webCart.length !== 0) {
+        dispatch(mergeUserCart(webCart));
+        dispatch(mergeUserWishlist(webWishList));
+        dispatch(mergeCarts(user.cart));
+        dispatch(mergeWishlist(user.wishlist));
         fetch("/api/userInfo", {
           method: "PATCH",
           body: JSON.stringify({
@@ -60,11 +60,16 @@ const Profile = (props) => {
           .catch((err) => {
             alert(err.message);
           });
+      } else {
+        dispatch(mergeCarts(user.cart));
+        dispatch(mergeWishlist(user.wishlist));
       }
     }
   }, []);
 
   console.log("roading");
+  console.log(userCart);
+  console.log(webCart);
 
   return (
     <Fragment>

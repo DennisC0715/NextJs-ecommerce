@@ -32,6 +32,7 @@ export const cartSlice = createSlice({
         updatedItems = [...state.cartItems];
         updatedItems[existingItemIndex] = updatedItem;
       }
+      console.log(state.cartItems);
     },
     cartRemoveItemQuantity: (state, action) => {
       const id = action.payload;
@@ -69,9 +70,8 @@ export const cartSlice = createSlice({
         totalQuantity += quantity[i];
       }
       state.cartItemNumber = totalQuantity;
-      console.log(totalQuantity);
       state.totalPrice = allPrice;
-      console.log(allPrice);
+      console.log(state.cartItems);
     },
   },
 });

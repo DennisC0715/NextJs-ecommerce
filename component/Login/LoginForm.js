@@ -87,7 +87,6 @@ const LoginForm = (props) => {
       })
       .then((data) => {
         dispatch(loginHandler(data.idToken));
-        localStorage.setItem("email", enteredEmail);
         //get expiresIn from data convert to unit second
         const expiresIn = new Date(
           new Date().getTime() + +data.expiresIn * 1000
