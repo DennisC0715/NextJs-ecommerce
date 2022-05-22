@@ -47,8 +47,42 @@ const userSlice = createSlice({
     mergeUserCart: (state, action) => {
       const webCart = action.payload;
       const userCart = state.cart;
-      const mergeCart = [...new Set([...webCart, ...userCart])];
-      state.cart = mergeCart;
+      // const newCart = [...new Set([...webCart, ...userCart])];
+      // state.cart = newCart;
+
+      // let mergedCart = [];
+      // for (let i = 0; i < newCart.length; i++) {
+      //   const newCartItemId = newCart[i].id;
+      //   mergedCart = newCart.filter((item) => item.id === newCartItemId);
+      // }
+      // const quantity = mergedCart.map((item) => item.quantity);
+      // let totalQuantity = 0;
+      // for (let i = 0; i < state.cartItems.length; i++) {
+      //   totalQuantity += quantity[i];
+      // }
+
+      for (let i = 0; i < userCart.length; i++) {
+        const newItem = userCart[i];
+        const existingItemIndex = webCart.findIndex(
+          (item) => item.id === newItem.id
+        );
+        const existingItem = webCart[existingItemIndex];
+        let updatedItems;
+        if (!existingItem) {
+          updatedItems = webCart.concat(userCart[i]);
+          webCart = updatedItems;
+        } else {
+          const number = existingItem.quantity;
+          const updatedItem = {
+            ...existingItem,
+            quantity: existingItem.quantity + number,
+          };
+          updatedItems = [...webCart];
+          updatedItems[existingItemIndex] = updatedItem;
+        }
+      }
+      state.cart = webCart;
+      console.log(state.cart);
     },
     mergeUserWishlist: (state, action) => {
       const webWishlist = action.payload;
