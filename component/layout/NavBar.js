@@ -70,11 +70,11 @@ function NavBar() {
           <li className={classes.navbarLinksli} onClick={toggleNavbar}>
             <Link href={links}>Account</Link>
           </li>
-          <li className={classes.navbarLinksli} onClick={toggleNavbar}>
+          {/* <li className={classes.navbarLinksli} onClick={toggleNavbar}>
             <Link href="https://github.com/DennisC0715/NextJs-ecommerce">
               GitHub
             </Link>
-          </li>
+          </li> */}
           <li className={classes.navbarLinksli} onClick={logoutAndToggle}>
             {userIsLoggedIn && <Link href="">Logout</Link>}
           </li>
